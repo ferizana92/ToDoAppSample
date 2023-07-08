@@ -1,0 +1,41 @@
+body {
+    background-image: url(../images/background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+    backdrop-filter: blur(5px);
+
+}
+
+
+
+.glass2 {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+#emailAlert {
+    display: none;
+    color: red;
+    font-size: 12px;
+}
+
+#passAlert {
+    display: none;
+    color: red;
+    font-size: 12px;
+}
+
+#formAlert {
+    display: none;
+    color: red;
+    font-size: 12px;
+}
+
+.required {
+    color: red;
+}

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo App - Login</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="./src/home.css" />
+    <link rel="icon" type="image/x-icon" href="./images/logo.ico" />
+  </head>
+  <body class="d-flex">
+    <!-- ----------------------------------------------------------welcome section-------------------------------------------------------- -->
+    <section
+      class="container d-flex justify-content-center align-items-center glass1"
+    >
+      <div class="card glass2 text-center" style="width: 18rem">
+        <img
+          src="./assets/images/logo.png"
+          class="card-img-top border-bottom border-primary"
+          alt="..."
+        />
+        <div class="card-body">
+          <h5 class="card-title text-center">Welcome To AnyTask</h5>
+          <p class="card-text">
+            For having access to our features, please login or sign-up.
+          </p>
+          <button
+            type="button"
+            class="btn btn-success"
+            data-bs-toggle="modal"
+            data-bs-target="#signUpModal"
+          >
+            Sign up
+          </button>
+          <button
+            type="button"
+            class="btn btn-primary"
+            data-bs-toggle="modal"
+            data-bs-target="#loginModal"
+          >
+            Login
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ----------------------------------------------------------login modal--------------------------------------------------------     -->
+    <div
+      class="modal fade"
+      id="loginModal"
+      tabindex="-1"
+      aria-labelledby="loginModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="loginModalLabel">Login Form</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form method="POST" action="">
+              <div class="mb-3">
+                <label for="loginInputEmail" class="form-label">Username</label>
+                <input 
+                  name="email"
+                  type="email"
+                  placeholder="email@example.com"
+                  class="form-control"
+                  id="loginInputEmail"
+                  aria-describedby="emailHelp"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="loginInputPassword" class="form-label"
+                  >Password</label
+                >
+                <input
+                  name="pass"
+                  type="password"
+                  placeholder="**********"
+                  class="form-control"
+                  id="loginInputPassword"
+                />
+              </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="submit"  class="btn btn-primary"> Login </button>
+          </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- ----------------------------------------------------------sign up modal-------------------------------------------------------- -->
+    <div
+      class="modal fade"
+      id="signUpModal"
+      tabindex="-1"
+      aria-labelledby="signUpModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="signUpModalLabel">Sign Up Form</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div id="formAlert" class="form-text">
+              Please complete all of the sections.
+            </div>
+            <form method="POST" action="" name="signUpForm">
+              <div class="mb-3">
+                <label for="signUpInputName" class="form-label">Name</label>
+                <span class="required">*</span>
+                <input
+                  name="name"
+                  type="text"
+                  required
+                  placeholder="John Doe"
+                  class="form-control"
+                  id="signUpInputName"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="signUpInputEmail" class="form-label"
+                  >Username</label
+                >
+                <span class="required">*</span>
+                <input
+                  name="email"
+                  type="email"
+                  required
+                  placeholder="email@example.com"
+                  class="form-control"
+                  id="signUpInputEmail"
+                  aria-describedby="emailHelp"
+                />
+                <div id="emailHelp" class="form-text">
+                  We'll never share your email with anyone else.
+                </div>
+
+              </div>
+              <div class="mb-3">
+                <label for="signUpInputPassword" class="form-label"
+                  >Password</label
+                >
+                <span class="required">*</span>
+                <input
+                  name="pass"
+                  type="password"
+                  onblur="checkPassword()"
+                  required
+                  placeholder="**********"
+                  class="form-control"
+                  id="signUpInputPassword"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="signUpInputRePassword" class="form-label"
+                  >Re-enter Password</label
+                >
+                <span class="required">*</span>
+                <input
+                  
+                  type="password"
+                  required
+                  onblur="checkPassword()"
+                  placeholder="**********"
+                  class="form-control"
+                  id="signUpInputRePassword"
+                />
+                <div id="passAlert" class="form-text">
+                  The passwords do not match.
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Close
+                </button>
+                <button
+                  type="submit"
+                  id="signUpBtn"
+                  type="button"
+                  class="btn btn-success">
+                  Sign Up
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+  </body>
+</html>
