@@ -1,0 +1,17 @@
+body {
+    background-image: url(../../assets/images/taskbg1.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    backdrop-filter: blur(5px);
+}
+
+.done {
+    transition: all 100ms ease-in-out;
+    opacity: 0.7;
+    background-color: rgb(213, 213, 213);
+}
+
+.hidden {
+    display: none;
+}
